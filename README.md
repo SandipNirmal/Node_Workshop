@@ -1,2 +1,2 @@
-# Node_Workshop
-NodeJs Workshop example repo
+# Node.js Workshop
+Node.js Workshop example repo
