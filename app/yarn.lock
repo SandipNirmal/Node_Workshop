@@ -2508,6 +2508,11 @@ utils-merge@1.0.1:
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/utils-merge/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
+uuid@^8.3.1:
+  version "8.3.1"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
+  integrity sha1-K6LmygANpg/OWhlpVKskETHgWjE=
+
 v8flags@^3.1.1:
   version "3.2.0"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/v8flags/-/v8flags-3.2.0.tgz#b243e3b4dfd731fa774e7492128109a0fe66d656"
