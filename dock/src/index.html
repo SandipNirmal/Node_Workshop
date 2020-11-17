@@ -142,15 +142,18 @@
           ### How JavaScript Works?
 
           <br />
-
-          - Sync vs Async
-          - Callstack
-          - Callback Queue
-          - APIs - Browser
-          - Event Loop
+          <img src="./assets/javascript-event-loop-step-1.png"/>
 
           <aside class="notes">
-            Notes - Event Loop -> Story of tasks.
+            <ul>
+            <li>Sync vs Async</li>
+            <li>Callstack</li>
+            <li>Callback Queue</li>
+            <li>APIs - Browser</li>
+            <li>Event Loop</li>
+          </ul>
+
+            Story of tasks.
 
             <ol>
               <li>Make Tea</li>
@@ -158,6 +161,10 @@
               <li>Order Food</li>
               <li>Clean Room</li>
             </ol>
+
+            Example:
+
+            http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
 
           </aside>
           </textarea>
@@ -171,9 +178,12 @@
           - Types
           - Interfaces
           - Enums
+          - TODO - Add Example Slides
 
           <aside class="notes">
-            Notes
+            Examples:
+
+            https://www.typescriptlang.org/play?#code/PTAEHUFMBsGMHsC2lQBd5oBYoCoE8AHSAZVgCcBLA1UABWgEM8BzM+AVwDsATAGiwoBnUENANQAd0gAjQRVSQAUCEmYKsTKGYUAbpGF4OY0BoadYKdJMoL+gzAzIoz3UNEiPOofEVKVqAHSKymAAmkYI7NCuqGqcANag8ABmIjQUXrFOKBJMggBcISGgoAC0oACCoASMFmgY7p7ehCTkVOle4jUMdRLYTqCc8LEZzCZmoNJODPHFZZXVtZYYkAAeRJTInDQS8po+rf40gnjbDKv8LqD2jpbYoACqAEoAMsK7sUmxkGSCc+VVQQuaTwVb1UBrDYULY7PagbgUZLJH6QbYmJAECjuMigZEMVDsJzCFLNXxtajBFQAIQYclgpNGoAAoqsGIgakp3DQzCy2RyAGqOCgMaTuUAAXlAACIABIwaAYcDwMjRKXBHms9nuQWUEViyUARgADABuYIITiCeDuAIK5gACg1fO1Qr1kAAlMFijS6czOOxEMzNRzFKiA6AACIUJywVAUeBeADeihKDwIEtABt4Kcj8AknGzJRekGSqELoCeFGYmFQigAvuaE1abXb7VGY3GEwE057KWAfepQABJbYlnooXlapQZBRkZLjx6CH6gZMlErJaOCVAAOTZkHy11QlE4zHLJUYW93yAPW+Pp5zJQYzH3gwD0h+9eCyS4sfjXmfqAPEuZBXpA9rsMBB5AT87o3kejKrmuTgEmQXgAAYACSJhBPwBBuvw7nudagFhOFkLatKEcgdZoWaDaKAB0EgXu9qJvhW4APqcHuB4AOTEC4VC8XWvYqDgDQeKhoCIMqzgguwNDfG4ZjMOwT6QPwsDQOoiQivAegiF4UqThyghSkkOJSuADioLxwjbpAEhSkEKgAPLfGQuxLvwAGHo4CiuNIeCgE4Mk6Iy3xLuiiAwsIVxKRIyrRCIBgcDi3QsGwXDcEEJRAA
           </aside>
           </textarea>
         </section>
@@ -182,12 +192,23 @@
           <textarea data-template>
           ### What is Node.js
 
-          <small>
-            Node.js is a JavaScript runtime environment based on V8 engine. Which helps running JavaScript outside browser.
-          </small>
+          <div class="fragment" data-fragment-index="1">
+            <small>Node.js is a JavaScript runtime environment based on V8 engine. Which helps running JavaScript outside browser.</small>
+          </div>
+
+          <div class="fragment" data-fragment-index="2">
+            <img src="assets/nodejs2.png" />
+          </div>
 
           <aside class="notes">
-            Notes -  https://nodejs.dev/learn
+            <ul>
+              <li>Refer - Event Loop Image from previous slide</li>
+              <li>Browser Sandbox</li>
+              <li>Accessing lower level OS APIs using Libuv</li>
+            </ul>
+
+            Learn:
+            https://nodejs.dev/learn
           </aside>
           </textarea>
         </section>
