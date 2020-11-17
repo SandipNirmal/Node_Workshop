@@ -31,6 +31,8 @@
           <textarea data-template>
           ### JavaScript Basics
 
+          <br />
+
           - What is JavaScript
           - How JavaScript works
           - JavaScript vs TypeScript
@@ -51,15 +53,95 @@
             - Wikipedia
           </small>
 
-          <aside class="notes">
-            Notes
-          </aside>
+          <!-- <small>Brief History</small> -->
           </textarea>
+
+          <aside class="notes">Brief History</aside>
+        </section>
+
+        <section>
+          <h3>What is JavaScript</h3>
+
+          <section data-markdown>
+            <textarea data-template>
+              #### Dynamic Typing
+
+              ```js[1|2|3|4|5]
+              let a = 10;
+              a = 'Ten';
+              a = [];
+              a = 30;
+              console.log(a) // 30
+              ```
+              <small>
+                Interpreter assigns variables a type at runtime based on the variable's value at the time.
+              </small>
+            </textarea>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+              #### Prototype based object orientation
+
+              ```js [1-5|7-8]
+              function Person(first, last, age) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+              }
+
+              const person1 = new Person("John", "Doe", 50);
+              const person2 = new Person("Sally", "Rally", 48);
+              ```
+
+              ##### Prototype Inheritance
+
+              ```js [1|2|3|4]
+              Person.prototype.nationality = 'Indian';
+              person1.nationality = 'Unknown'
+              console.log(person1.nationality) // Unknown
+              console.log(person2.nationality) // Indian
+              ```
+            </textarea>
+
+            <aside class="notes">
+              JavaScript is an object-based language based on prototypes.
+            </aside>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+              ##### First class functions - treated like any other variable
+
+              ```js
+              // variable assignment and annonymous
+              var getUserName = function(user) {
+                return user.name;
+              }
+
+              // Pass as value
+              function printSum(computeSum) {
+                var sum = computeSum();
+                console.log(sum);
+              }
+
+              // Return as value
+              function sayHello() {
+                return function() {
+                   console.log("Hello!");
+                }
+              }
+              ```
+
+            </textarea>
+          </section>
         </section>
 
         <section data-markdown>
           <textarea data-template>
           ### How JavaScript Works?
+
+          <br />
 
           - Sync vs Async
           - Callstack
@@ -69,7 +151,7 @@
 
           <aside class="notes">
             Notes - Event Loop -> Story of tasks.
-            
+
             <ol>
               <li>Make Tea</li>
               <li>Do Laundry</li>
@@ -85,8 +167,10 @@
           <textarea data-template>
           ### JavaScript vs TypeScript
 
+          - TypeScript is Superset of JavaScript
           - Types
           - Interfaces
+          - Enums
 
           <aside class="notes">
             Notes
@@ -110,12 +194,20 @@
 
         <section data-markdown>
           <textarea data-template>
-          ### REST
+          ### REST - Representation State Transfer
+
+          - Software architecture for creating Web Services.
+          - Stateless - Need to send all information as a part of request.
+          - Functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs).
 
           <aside class="notes">
-            REST - Representation State Transfer
+
           </aside>
           </textarea>
+        </section>
+
+        <section>
+          <h2>Day 2</h2>
         </section>
 
         <section data-markdown>
@@ -123,7 +215,7 @@
           ### REST API development with Node.js
 
           <aside class="notes">
-            REST - Representation State Transfer
+
           </aside>
           </textarea>
         </section>
