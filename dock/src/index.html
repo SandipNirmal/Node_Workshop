@@ -213,18 +213,55 @@
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-          ### REST - Representation State Transfer
+        <section>
+          <h3
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            REST - <small> Representation State Transfer</small>
+          </h3>
+          <section data-markdown>
+            <textarea data-template>
+            - Software architecture for creating Web Services.
+            - Stateless - Need to send all information as a part of request.
+            - Functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs).
+            </textarea>
+          </section>
 
-          - Software architecture for creating Web Services.
-          - Stateless - Need to send all information as a part of request.
-          - Functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs).
+          <section>
+            <img src="./assets/REST_arch.jpeg" style="margin-top: 80px" />
+          </section>
 
-          <aside class="notes">
+          <section data-markdown>
+            <textarea data-template>
+            ##### User
 
-          </aside>
-          </textarea>
+            ```
+            # User List
+            HTTP GET
+            /users
+
+            # Get Particular User
+            HTTP GET
+            /users/{userId} - unique user Id
+
+            # Create New User (Create Resource)
+            HTTP POST
+            /users
+
+            Paylod
+
+            # Edit User
+            HTTP PUT
+            /users/{userId}
+
+            Paylod
+
+            # Delete User
+            HTTP DELETE
+            /users/{userId}
+            ```
+            </textarea>
+          </section>
         </section>
 
         <section>
