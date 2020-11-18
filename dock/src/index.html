@@ -29,7 +29,7 @@
 
         <section data-markdown>
           <textarea data-template>
-          ### JavaScript Basics
+          ### JavaScript Basics (Day - 1)
 
           <br />
 
@@ -44,6 +44,7 @@
         <section data-markdown>
           <textarea data-template>
           ### What is JavaScript
+          <br />
 
           <small>
             JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.
@@ -170,22 +171,73 @@
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-          ### JavaScript vs TypeScript
+        <section>
+          <h3>JavaScript vs TypeScript</h3>
 
-          - TypeScript is Superset of JavaScript
-          - Types
-          - Interfaces
-          - Enums
-          - TODO - Add Example Slides
+          <section data-markdown>
+            <textarea data-template>
+              <small>TypeScript is Superset of JavaScript</small>
+              <img src="assets/typescript.png" />
+              <aside class="notes">Why TypeScript?</aside>
+            </textarea>
+          </section>
 
-          <aside class="notes">
-            Examples:
+          <section data-markdown>
+            <textarea data-template>
+            #### Types
 
-            https://www.typescriptlang.org/play?#code/PTAEHUFMBsGMHsC2lQBd5oBYoCoE8AHSAZVgCcBLA1UABWgEM8BzM+AVwDsATAGiwoBnUENANQAd0gAjQRVSQAUCEmYKsTKGYUAbpGF4OY0BoadYKdJMoL+gzAzIoz3UNEiPOofEVKVqAHSKymAAmkYI7NCuqGqcANag8ABmIjQUXrFOKBJMggBcISGgoAC0oACCoASMFmgY7p7ehCTkVOle4jUMdRLYTqCc8LEZzCZmoNJODPHFZZXVtZYYkAAeRJTInDQS8po+rf40gnjbDKv8LqD2jpbYoACqAEoAMsK7sUmxkGSCc+VVQQuaTwVb1UBrDYULY7PagbgUZLJH6QbYmJAECjuMigZEMVDsJzCFLNXxtajBFQAIQYclgpNGoAAoqsGIgakp3DQzCy2RyAGqOCgMaTuUAAXlAACIABIwaAYcDwMjRKXBHms9nuQWUEViyUARgADABuYIITiCeDuAIK5gACg1fO1Qr1kAAlMFijS6czOOxEMzNRzFKiA6AACIUJywVAUeBeADeihKDwIEtABt4Kcj8AknGzJRekGSqELoCeFGYmFQigAvuaE1abXb7VGY3GEwE057KWAfepQABJbYlnooXlapQZBRkZLjx6CH6gZMlErJaOCVAAOTZkHy11QlE4zHLJUYW93yAPW+Pp5zJQYzH3gwD0h+9eCyS4sfjXmfqAPEuZBXpA9rsMBB5AT87o3kejKrmuTgEmQXgAAYACSJhBPwBBuvw7nudagFhOFkLatKEcgdZoWaDaKAB0EgXu9qJvhW4APqcHuB4AOTEC4VC8XWvYqDgDQeKhoCIMqzgguwNDfG4ZjMOwT6QPwsDQOoiQivAegiF4UqThyghSkkOJSuADioLxwjbpAEhSkEKgAPLfGQuxLvwAGHo4CiuNIeCgE4Mk6Iy3xLuiiAwsIVxKRIyrRCIBgcDi3QsGwXDcEEJRAA
-          </aside>
-          </textarea>
+            ```js[1-2|3|4]
+            let anExampleVariable = "Hello World";
+            // let anExampleVariable:string = "Hello World";
+            anExampleVariable = 10; // Error
+            console.log(anExampleVariable);
+            ```
+            </textarea>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+            #### Interfaces
+
+            ```js[1-6|8-10]
+            // Basic Inteface Example
+            interface User {
+                firstName: string,
+                lastName: string,
+                age?: number // optional
+            }
+
+            function getUserName(user: User): string {
+                return `${user.firstName} ${user.lastName}`;
+            }
+
+            getUserName({first_name: 'Sandip'}) // Results in error
+            ```
+            </textarea>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+            #### Enums
+
+            ```js[1-7|9]
+            // Basic Enum Example
+            enum Direction {
+              Up = 1,
+              Down,
+              Left,
+              Right
+            }
+
+            console.log(Direction.Up)
+            ```
+            <aside class="notes">
+              Examples:
+
+              https://www.typescriptlang.org/play?#code/PTAEHUFMBsGMHsC2lQBd5oBYoCoE8AHSAZVgCcBLA1UABWgEM8BzM+AVwDsATAGiwoBnUENANQAd0gAjQRVSQAUCEmYKsTKGYUAbpGF4OY0BoadYKdJMoL+gzAzIoz3UNEiPOofEVKVqAHSKymAAmkYI7NCuqGqcANag8ABmIjQUXrFOKBJMggBcISGgoAC0oACCoASMFmgY7p7ehCTkVOle4jUMdRLYTqCc8LEZzCZmoNJODPHFZZXVtZYYkAAeRJTInDQS8po+rf40gnjbDKv8LqD2jpbYoACqAEoAMsK7sUmxkGSCc+VVQQuaTwVb1UBrDYULY7PagbgUZLJH6QbYmJAECjuMigZEMVDsJzCFLNXxtajBFQAIQYclgpNGoAAoqsGIgakp3DQzCy2RyAGqOCgMaTuUAAXlAACIABIwaAYcDwMjRKXBHms9nuQWUEViyUARgADABuYIITiCeDuAIK5gACg1fO1Qr1kAAlMFijS6czOOxEMzNRzFKiA6AACIUJywVAUeBeADeihKDwIEtABt4Kcj8AknGzJRekGSqELoCeFGYmFQigAvuaE1abXb7VGY3GEwE057KWAfepQABJbYlnooXlapQZBRkZLjx6CH6gZMlErJaOCVAAOTZkHy11QlE4zHLJUYW93yAPW+Pp5zJQYzH3gwD0h+9eCyS4sfjXmfqAPEuZBXpA9rsMBB5AT87o3kejKrmuTgEmQXgAAYACSJhBPwBBuvw7nudagFhOFkLatKEcgdZoWaDaKAB0EgXu9qJvhW4APqcHuB4AOTEC4VC8XWvYqDgDQeKhoCIMqzgguwNDfG4ZjMOwT6QPwsDQOoiQivAegiF4UqThyghSkkOJSuADioLxwjbpAEhSkEKgAPLfGQuxLvwAGHo4CiuNIeCgE4Mk6Iy3xLuiiAwsIVxKRIyrRCIBgcDi3QsGwXDcEEJRAA
+            </aside>
+            </textarea>
+          </section>
         </section>
 
         <section data-markdown>
@@ -235,7 +287,7 @@
             <textarea data-template>
             ##### User
 
-            ```
+            ```[1-3|5-7|9-13|15-19|21-23]
             # User List
             HTTP GET
             /users
@@ -248,7 +300,7 @@
             HTTP POST
             /users
 
-            Paylod
+            Paylod - JSON
 
             # Edit User
             HTTP PUT
@@ -259,6 +311,8 @@
             # Delete User
             HTTP DELETE
             /users/{userId}
+
+
             ```
             </textarea>
           </section>
@@ -303,15 +357,10 @@
           </textarea>
         </section>
 
-        <section>
-          <section>Vertical Slide 1</section>
-          <section>Vertical Slide 2</section>
-        </section>
-
-        <section data-markdown>
+        <!-- <section data-markdown>
           <script type="text/template">
-            - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
-            - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Item 1
+            - Item 2
           </script>
         </section>
 
@@ -353,7 +402,7 @@
                   </tr>
                 </table>
                 </code></pre>
-        </section>
+        </section> -->
 
         <section>
           <h2>Thank You!</h2>
