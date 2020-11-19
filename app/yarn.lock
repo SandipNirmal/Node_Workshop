@@ -996,6 +996,11 @@ buffer-from@^1.0.0:
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha1-MnE7wCj3XAL9txDXx7zsHyxgcO8=
 
+buffer-writer@2.0.0:
+  version "2.0.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/buffer-writer/-/buffer-writer-2.0.0.tgz#ce7eb81a38f7829db09c873f2fbb792c0c98ec04"
+  integrity sha1-zn64Gjj3gp2wnIc/L7t5LAyY7AQ=
+
 bytes@3.1.0:
   version "3.1.0"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
@@ -1619,7 +1624,7 @@ inherits@2.0.3:
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/inherits/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-inherits@2.0.4:
+inherits@2.0.4, inherits@^2.0.3:
   version "2.0.4"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha1-D6LGT5MpF8NDOg3tVTY6rjdBa3w=
@@ -2024,6 +2029,11 @@ package-json@^6.3.0:
     registry-url "^5.0.0"
     semver "^6.2.0"
 
+packet-reader@1.0.0:
+  version "1.0.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/packet-reader/-/packet-reader-1.0.0.tgz#9238e5480dedabacfe1fe3f2771063f164157d74"
+  integrity sha1-kjjlSA3tq6z+H+PydxBj8WQVfXQ=
+
 parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/parse-passwd/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
@@ -2049,6 +2059,57 @@ path-to-regexp@0.1.7:
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/path-to-regexp/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
+pg-connection-string@^2.4.0:
+  version "2.4.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pg-connection-string/-/pg-connection-string-2.4.0.tgz#c979922eb47832999a204da5dbe1ebf2341b6a10"
+  integrity sha1-yXmSLrR4MpmaIE2l2+Hr8jQbahA=
+
+pg-int8@1.0.1:
+  version "1.0.1"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pg-int8/-/pg-int8-1.0.1.tgz#943bd463bf5b71b4170115f80f8efc9a0c0eb78c"
+  integrity sha1-lDvUY79bcbQXARX4D478mgwOt4w=
+
+pg-pool@^3.2.2:
+  version "3.2.2"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pg-pool/-/pg-pool-3.2.2.tgz#a560e433443ed4ad946b84d774b3f22452694dff"
+  integrity sha1-pWDkM0Q+1K2Ua4TXdLPyJFJpTf8=
+
+pg-protocol@^1.4.0:
+  version "1.4.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pg-protocol/-/pg-protocol-1.4.0.tgz#43a71a92f6fe3ac559952555aa3335c8cb4908be"
+  integrity sha1-Q6cakvb+OsVZlSVVqjM1yMtJCL4=
+
+pg-types@^2.1.0:
+  version "2.2.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pg-types/-/pg-types-2.2.0.tgz#2d0250d636454f7cfa3b6ae0382fdfa8063254a3"
+  integrity sha1-LQJQ1jZFT3z6O2rgOC/fqAYyVKM=
+  dependencies:
+    pg-int8 "1.0.1"
+    postgres-array "~2.0.0"
+    postgres-bytea "~1.0.0"
+    postgres-date "~1.0.4"
+    postgres-interval "^1.1.0"
+
+pg@^8.5.1:
+  version "8.5.1"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pg/-/pg-8.5.1.tgz#34dcb15f6db4a29c702bf5031ef2e1e25a06a120"
+  integrity sha1-NNyxX220opxwK/UDHvLh4loGoSA=
+  dependencies:
+    buffer-writer "2.0.0"
+    packet-reader "1.0.0"
+    pg-connection-string "^2.4.0"
+    pg-pool "^3.2.2"
+    pg-protocol "^1.4.0"
+    pg-types "^2.1.0"
+    pgpass "1.x"
+
+pgpass@1.x:
+  version "1.0.4"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/pgpass/-/pgpass-1.0.4.tgz#85eb93a83800b20f8057a2b029bf05abaf94ea9c"
+  integrity sha1-heuTqDgAsg+AV6KwKb8Fq6+U6pw=
+  dependencies:
+    split2 "^3.1.1"
+
 picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
@@ -2072,6 +2133,28 @@ pkg-dir@^3.0.0:
   integrity sha1-J0kCDyOe2ZCIGx9xIQ1R62UjvqM=
   dependencies:
     find-up "^3.0.0"
+
+postgres-array@~2.0.0:
+  version "2.0.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/postgres-array/-/postgres-array-2.0.0.tgz#48f8fce054fbc69671999329b8834b772652d82e"
+  integrity sha1-SPj84FT7xpZxmZMpuINLdyZS2C4=
+
+postgres-bytea@~1.0.0:
+  version "1.0.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/postgres-bytea/-/postgres-bytea-1.0.0.tgz#027b533c0aa890e26d172d47cf9ccecc521acd35"
+  integrity sha1-AntTPAqokOJtFy1Hz5zOzFIazTU=
+
+postgres-date@~1.0.4:
+  version "1.0.7"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/postgres-date/-/postgres-date-1.0.7.tgz#51bc086006005e5061c591cee727f2531bf641a8"
+  integrity sha1-UbwIYAYAXlBhxZHO5yfyUxv2Qag=
+
+postgres-interval@^1.1.0:
+  version "1.2.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/postgres-interval/-/postgres-interval-1.2.0.tgz#b460c82cb1587507788819a06aa0fffdb3544695"
+  integrity sha1-tGDILLFYdQd4iBmgaqD//bNURpU=
+  dependencies:
+    xtend "^4.0.0"
 
 prepend-http@^2.0.0:
   version "2.0.0"
@@ -2135,6 +2218,15 @@ rc@^1.2.8:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+readable-stream@^3.0.0:
+  version "3.6.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-3.6.0.tgz#337bbda3adc0706bd3e024426a286d4b4b2c9198"
+  integrity sha1-M3u9o63AcGvT4CRCaihtS0sskZg=
+  dependencies:
+    inherits "^2.0.3"
+    string_decoder "^1.1.1"
+    util-deprecate "^1.0.1"
 
 readdirp@~3.5.0:
   version "3.5.0"
@@ -2225,6 +2317,11 @@ safe-buffer@5.1.2, safe-buffer@~5.1.1:
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha1-mR7GnSluAxN0fVm9/St0XDX4go0=
 
+safe-buffer@~5.2.0:
+  version "5.2.1"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
+
 "safer-buffer@>= 2.1.2 < 3":
   version "2.1.2"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
@@ -2309,6 +2406,13 @@ source-map@^0.6.0:
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/source-map/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
 
+split2@^3.1.1:
+  version "3.2.2"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/split2/-/split2-3.2.2.tgz#bf2cf2a37d838312c249c89206fd7a17dd12365f"
+  integrity sha1-vyzyo32DgxLCSciSBv16F90SNl8=
+  dependencies:
+    readable-stream "^3.0.0"
+
 "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/statuses/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
@@ -2347,6 +2451,13 @@ string.prototype.trimstart@^1.0.1:
   dependencies:
     define-properties "^1.1.3"
     es-abstract "^1.18.0-next.1"
+
+string_decoder@^1.1.1:
+  version "1.3.0"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/string_decoder/-/string_decoder-1.3.0.tgz#42f114594a46cf1a8e30b0a84f56c78c3edac21e"
+  integrity sha1-QvEUWUpGzxqOMLCoT1bHjD7awh4=
+  dependencies:
+    safe-buffer "~5.2.0"
 
 strip-ansi@^5.1.0:
   version "5.2.0"
@@ -2503,6 +2614,11 @@ url-parse-lax@^3.0.0:
   dependencies:
     prepend-http "^2.0.0"
 
+util-deprecate@^1.0.1:
+  version "1.0.2"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/util-deprecate/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+  integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/utils-merge/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
@@ -2551,3 +2667,8 @@ xdg-basedir@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-4.0.0.tgz#4bc8d9984403696225ef83a1573cbbcb4e79db13"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
+
+xtend@^4.0.0:
+  version "4.0.2"
+  resolved "https://sea-artifactory.olympus.f5net.com:443/artifactory/api/npm/npm-all/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
+  integrity sha1-u3J3n1+kZRhrH0OPZ0+jR/2121Q=

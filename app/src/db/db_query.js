@@ -13,7 +13,7 @@ export const query = async (queryText, params = []) => {
   }
 };
 
-export const get_single_record = async (queryText, params = []) => {
+export const query_one = async (queryText, params = []) => {
   const X = await query(queryText, params);
   const { rowCount, rows } = X;
   const result = {

@@ -1,4 +1,4 @@
-// Pool should not be used directly to query db use dbquery
+// Pool should not be used directly to query db, use dbquery
 import { Pool } from "pg";
 import "dotenv/config";
 
