@@ -1,11 +1,13 @@
 import { query_one } from "../../db";
 
-export async function authenticateUser({ email, password }) {
-  const loginQuery =
-    "SELECT * FROM user_accounts WHERE email=$1 AND password=$2";
+const USER_PROJECTION =
+  "id, firstname, lastname, display_name, email, password, bio";
+
+export async function authenticateUser({ email }) {
+  const loginQuery = `SELECT ${USER_PROJECTION} FROM user_accounts WHERE email=$1`;
 
   try {
-    const user = await query_one(loginQuery, [email, password]);
+    const { rowCount, ...user } = await query_one(loginQuery, [email]);
     return user;
   } catch (e) {
     throw new Error(e);

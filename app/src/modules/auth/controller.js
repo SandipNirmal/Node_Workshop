@@ -1,4 +1,7 @@
+import bcrypt from "bcrypt";
+
 import * as queries from "./store";
+import { ERROR_MESSAGES, generateJWT } from "../../utils";
 
 /**
  * @description Registers new user
@@ -10,20 +13,23 @@ export async function authenticateUser(req, res, next) {
       body: { email, password },
     } = req;
 
-    const user = await queries.authenticateUser({
-      email,
-      password, // Encrypt password
+    const {
+      password: hashedPassword,
+      ...user
+    } = await queries.authenticateUser({
+      email, // Encrypt password
     });
 
-    if (!user.display_name) {
+    if (!user.email || !bcrypt.compareSync(password, hashedPassword)) {
       return res.status(400).send({
-        msg: "User not found!",
+        msg: ERROR_MESSAGES.INVALID_AUTH,
       });
     }
 
     // create JWT
+    const token = generateJWT(user.id, email);
 
-    res.status(200).send({ user });
+    res.status(200).send({ ...user, token });
   } catch (e) {
     console.log(e);
     next(e);

@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development && nodemon --exec babel-node src/index.js",
+    "build": "rm -rf dist && babel src -d dist",
+    "serve": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=development nodemon --exec babel-node src/index.js",
+    "dev": "npm run start",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --forceExit --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sandip Nirmal",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -18,9 +21,11 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
     "helmet": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",

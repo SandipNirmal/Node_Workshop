@@ -1,4 +1,5 @@
 import * as queries from "./store";
+import { encryptPassword } from "../../utils";
 
 /**
  * @description Registers new user
@@ -18,7 +19,7 @@ export async function registerNewUser(req, res, next) {
 
     const userId = await queries.registerUser({
       email,
-      password, // Encrypt password
+      password: encryptPassword(password),
       firstname,
       lastname,
     });
