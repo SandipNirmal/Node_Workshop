@@ -10,6 +10,12 @@ export async function registerNewUser(req, res, next) {
       body: { email, password, firstname, lastname },
     } = req;
 
+    const userExists = await queries.findUserByEmail(email);
+
+    if (userExists.email) {
+      return res.status(400).send({ msg: "User already exists!" });
+    }
+
     const userId = await queries.registerUser({
       email,
       password, // Encrypt password

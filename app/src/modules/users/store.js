@@ -1,4 +1,4 @@
-import { query } from "../../db";
+import { query, query_one } from "../../db";
 import { generate_uuid } from "../../utils";
 
 export async function registerUser({ firstname, lastname, email, password }) {
@@ -16,8 +16,26 @@ export async function registerUser({ firstname, lastname, email, password }) {
   ];
 
   try {
-    const userRegistration = await query(registerQuery, values);
-    return userRegistration;
+    const { id } = await query_one(registerQuery, values);
+
+    return id;
+  } catch (e) {
+    throw new Error(e);
+  }
+}
+
+export async function findUserByEmail(email) {
+  const FIND_BY_EMAIL =
+    "SELECT id, email, firstname, lastname from user_accounts WHERE email=$1";
+
+  try {
+    const user = await query_one(FIND_BY_EMAIL, [email]);
+
+    if (user.email) {
+      return user;
+    }
+
+    return { email: "" };
   } catch (e) {
     throw new Error(e);
   }
