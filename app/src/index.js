@@ -28,20 +28,16 @@ if (process.env.NODE_ENV === "development") {
 // Routes
 app.use("/", routes);
 
-// // catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//   const err = new Error("Not Found");
-//   err.status = 404;
-//   next(err);
-// });
-
-app.use("*", (req, res) => {
-  res.status(404).send({ msg: "Not Found!" });
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  const err = new Error("Not Found");
+  err.status = 404;
+  next(err);
 });
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function (err, req, res) {
+app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.json({
     errors: {

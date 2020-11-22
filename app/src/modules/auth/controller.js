@@ -17,7 +17,7 @@ export async function authenticateUser(req, res, next) {
       password: hashedPassword,
       ...user
     } = await queries.authenticateUser({
-      email, // Encrypt password
+      email,
     });
 
     if (!user.email || !bcrypt.compareSync(password, hashedPassword)) {
