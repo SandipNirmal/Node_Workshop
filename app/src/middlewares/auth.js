@@ -1,15 +1,15 @@
-import jwt from 'express-jwt';
+import jwt from "express-jwt";
 
-import { secret } from '../config';
+import { secret } from "../config";
 
 function getTokenFromHeader(req) {
   if (
     (req.headers.authorization &&
-      req.headers.authorization.split(' ')[0] === 'Token') ||
+      req.headers.authorization.split(" ")[0] === "Token") ||
     (req.headers.authorization &&
-      req.headers.authorization.split(' ')[0] === 'Bearer')
+      req.headers.authorization.split(" ")[0] === "Bearer")
   ) {
-    return req.headers.authorization.split(' ')[1];
+    return req.headers.authorization.split(" ")[1];
   }
 
   return null;
@@ -18,15 +18,15 @@ function getTokenFromHeader(req) {
 export const auth = {
   required: jwt({
     secret: secret,
-    userProperty: 'payload',
+    userProperty: "payload",
     getToken: getTokenFromHeader,
-    algorithms: ['HS256'],
+    algorithms: ["HS256"],
   }),
   optional: jwt({
     secret: secret,
-    userProperty: 'payload',
+    userProperty: "payload",
     credentialsRequired: false,
     getToken: getTokenFromHeader,
-    algorithms: ['HS256'],
+    algorithms: ["HS256"],
   }),
 };
