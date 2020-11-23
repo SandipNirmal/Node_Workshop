@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
+import fs from "fs";
+import path from "path";
 
 import routes from "./routes";
 
@@ -20,9 +22,19 @@ app.use(helmet());
 // enable CORS
 app.use(cors());
 
+// create a write stream (in append mode)
+const accessLogStream = fs.createWriteStream(
+  path.join(__dirname, "access.log"),
+  {
+    flags: "a",
+  }
+);
+
 // Logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
+} else if (process.env.NODE_ENV === "production") {
+  app.use(morgan("combined", { stream: accessLogStream }));
 }
 
 // Routes

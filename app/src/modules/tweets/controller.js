@@ -1,5 +1,5 @@
 import * as queries from "./store";
-import { generate_uuid } from "../../utils";
+import { generate_uuid, ERROR_MESSAGES } from "../../utils";
 
 /**
  * @description Create new tweet
@@ -51,6 +51,12 @@ export async function getTweet(req, res, next) {
     } = req;
 
     const tweet = await queries.getTweetById(tweetId);
+
+    if (!tweet.id) {
+      return res
+        .status(404)
+        .send({ msg: ERROR_MESSAGES.RESOURCE_NOT_FOUND("Tweet") });
+    }
 
     res.status(200).send({ tweet });
   } catch (e) {
