@@ -5,7 +5,7 @@ import { createDummyUser, deleteAllUsers, dummy_users } from "../../testUtils";
 import { getUserById } from "./store";
 
 afterAll(async () => {
-  console.log("Cleaning up users");
+  console.log("Cleaning up...");
   await deleteAllUsers();
 });
 
