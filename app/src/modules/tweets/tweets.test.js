@@ -11,12 +11,12 @@ import { generateJWT } from "../../utils";
 
 beforeAll(async () => {
   console.log("Setting up...");
-  await deleteAllTweets();
   await createDummyUser();
 });
 
 afterAll(async () => {
   console.log("Cleaning up...");
+  await deleteAllTweets();
   await deleteAllUsers();
 });
 
