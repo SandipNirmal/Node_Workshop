@@ -14,7 +14,8 @@ router.post(
   createTweet
 );
 router.get("/", listTweets);
-router.get("/:tweetId", getTweet);
+
+router.get("/:tweetId", getTweet); // /api/users/${userid} -> /api/users/u-1234
 
 // TODO - Add Edit, Delete and Pagination
 
