@@ -1,4 +1,4 @@
-# Node.js App
+# Node.js Express Server Boilerplate
 
 Basic Node.js REST Application using ExpressJS. Things to cover:
 
