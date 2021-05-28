@@ -1,3 +1,6 @@
+/**
+ * Basic example for express server
+ */
 const express = require("express");
 
 const app = express();
